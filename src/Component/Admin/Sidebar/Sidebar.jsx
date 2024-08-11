@@ -34,7 +34,7 @@ const Sidebar = () => {
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <Link to="/movies">
+                        <Link to="/addmovie">
                             <a
                                 href="javascript:void(0)"
                                 className="text-black hover:text-blue-600 text-[15px] flex items-center hover:bg-white rounded px-4 py-3 transition-all"

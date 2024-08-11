@@ -23,6 +23,7 @@ function MovieType() {
         <div>
             <Navbar />
             <h1 className='text-4xl text-white'>{type}</h1>
+            
             <div class="h-full grid lg:grid-cols-5 grid-cols-2 justify-between max-w-fit ml-auto mr-auto gap-10 mt-32">
                 {filterMovies.map((movie, index) => (
                     <Link to={`/moviedisplay/${movie.title}`}>

@@ -23,6 +23,17 @@ export const moviesdata = [
 
     },
     {
+        title:'Turbo',
+        poster_url: 'https://res.cloudinary.com/djh2ro9tm/image/upload/v1723396051/Movie%20Mobile%20Background/hgmz8k3xkdrwprpmm8xv.jpg',
+        background_url: 'https://res.cloudinary.com/djh2ro9tm/image/upload/v1723396064/Movie%20Background%20Poster/a974o6rlmtgelwxeau8q.jpg',
+        mobile_background_url: 'https://res.cloudinary.com/djh2ro9tm/image/upload/v1723396051/Movie%20Mobile%20Background/hgmz8k3xkdrwprpmm8xv.jpg',
+        description: 'Jeep driver Jose gets in trouble and is forced to relocate to Chennai, Tamil Nadu, India, where he becomes entangled with Indhu and his best friend. A series of surprises await them all.',
+        movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+        movielink: 'https://short.ink/VzMEBLhCp',
+        slider:'yes',
+        type:'south'
+    },
+    {
         title: 'Raayan',
         poster_url: 'https://res.cloudinary.com/djh2ro9tm/image/upload/v1722790097/Movies%20Posters/ificrrcttwekdjddjnnu.webp',
         background_url: 'https://res.cloudinary.com/djh2ro9tm/image/upload/v1722772863/Movie%20Background%20Poster/h7jiv3vawncn5j3lkqbp.jpg',

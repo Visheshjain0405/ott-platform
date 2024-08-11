@@ -28,6 +28,7 @@ function MovieDetails() {
             <Navbar />
             {
                 isDesktop ? (
+                    <>
                     <section className='mt-[60px]' style={{ backgroundImage: `url(${movie.background_url})`, height: '95vh', width: '98vw', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
 
                         <div className="absolute inset-0 bg-black bg-opacity-50">
@@ -38,6 +39,7 @@ function MovieDetails() {
                             </div>
                         </div>
                     </section>
+    </>
                 ) : (
                     <>
                     <section className='mt-[60px]' style={{ backgroundImage: `url(${movie.mobile_background_url})`, height: '95vh', width: '98vw', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>

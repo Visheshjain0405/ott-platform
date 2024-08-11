@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import "./MovieDisplay.css";
 import { moviesdata } from "../Home/Assests/Data"
-
-
+import Aos from 'aos';
+Aos.init()
 
 function MovieDisplay({type}) {
 
@@ -32,13 +32,16 @@ function MovieDisplay({type}) {
     // if (loading) return <p>Loading...</p>;
     // if (error) return <p>Error: {error.message}</p>;
 
+    Aos.init({
+        duration:2000
+    })
     return (
         <div>
             <Navbar />
 
             <h1 className='text-4xl text-white ml-[13%] my-[50px]'>{movietype} Movies</h1>
 
-            <div class="h-full grid lg:grid-cols-5 grid-cols-2 justify-between max-w-fit ml-auto mr-auto gap-10">
+            <div class="h-full grid lg:grid-cols-5 grid-cols-2 justify-between max-w-fit ml-auto mr-auto gap-10" data-aos="fade-right">
                 {movies.map((movie, index) => (
                     <Link to={`/moviedisplay/${movie.title}`}>
                         <div key={index} class="card flex justify-center items-center" style={{ background: `url(${movie.poster_url})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
