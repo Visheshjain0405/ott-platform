@@ -16,7 +16,7 @@ function Login() {
         try {
             await signInWithEmailAndPassword(auth, email, password).then(() => {
                 toast.success('Login success');
-                window.location.href = "/home";
+                window.location.href = "/";
             })
         } catch (error) {
             console.error(error);

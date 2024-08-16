@@ -10,10 +10,47 @@ function Signup() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
 
+    const validatePassword = (password, confirmPassword) => {
+        const minLength = 8;
+        const hasNumber = /\d/;
+        const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+
+        if (password.length < minLength) {
+            toast.error('Password should be at least 8 characters long');
+            return false;
+        }
+        if (!hasNumber.test(password)) {
+            toast.error('Password should contain at least one number');
+            return false;
+        }
+        if (!hasSpecialChar.test(password)) {
+            toast.error('Password should contain at least one special character');
+            return false;
+        }
+        if (password !== confirmPassword) {
+            toast.error('Passwords do not match');
+            return false;
+        }
+        return true;
+    }
     const HandleSubmit = async (e) => {
 
         e.preventDefault();
+
+        if (username === '') {
+            toast.error('Username is required');
+            return;
+        }
+        if (email === '') {
+            toast.error('Email ID is required');
+            return;
+        }
+        if (!validatePassword(password,confirmPassword)) {
+            return;
+        }
+
         try {
             await createUserWithEmailAndPassword(auth, email, password)
                 .then(() => {
@@ -27,6 +64,7 @@ function Signup() {
                         .then(() => {
                             console.log("Data Saved Successfully !")
                             toast.success("User Register Successfully !")
+                            window.location.href = "/";
                         }).catch((error) => {
                             console.error(error)
                             toast.error('Registration Failed');
@@ -121,6 +159,8 @@ function Signup() {
                             <input
                                 type="password"
                                 id="confirm-password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 placeholder="Confirm your password"
                                 required=""

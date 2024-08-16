@@ -12,7 +12,7 @@ function MovieType() {
     useEffect(() => {
         let filtered;
         if (type === "southhindidubbedmovies") {
-          filtered = moviesdata.filter(movie => movie.type === "south");
+          filtered = moviesdata.filter(movie => movie.type === "South");
         } else {
           filtered = moviesdata.filter(movie => movie.type === type);
         }

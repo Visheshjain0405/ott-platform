@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown, ChevronRight, Search } from 'react-feather';
 import { Link } from 'react-router-dom';
+import Authentication from './Authentication';
 
 function App() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -43,6 +44,9 @@ function App() {
               <input type="text" placeholder="Search..." className="w-64 p-2 rounded-md outline-none" />
             </div>
           )}
+        </div>
+        <div>
+          <Authentication/>
         </div>
       </div>
     </nav>

@@ -8,7 +8,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/oobRw7K9i',
         slider:'yes',
-        type:'bollywood'
+        type:'Bollywood'
     },
     {
         title: 'Auron Mein Kahan Dum Tha',
@@ -19,7 +19,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" autoplay;  encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/Dgtf-X2ds',
         slider:'yes',
-        type:'bollywood'
+        type:'Bollywood'
 
     },
     {
@@ -31,7 +31,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/VzMEBLhCp',
         slider:'yes',
-        type:'south'
+        type:'South'
     },
     {
         title: 'Raayan',
@@ -42,7 +42,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/fGktF8Y1d',
         slider:'yes',
-        type:'south'
+        type:'South'
 
     },
     {
@@ -64,7 +64,7 @@ export const moviesdata = [
         mobile_background_url: 'https://res.cloudinary.com/djh2ro9tm/image/upload/v1722938145/Movie%20Mobile%20Background/p3imt7m9rlni8422jjbb.jpg',
         description:'A man fights to make his dream of creating a low cost airline a reality, facing opposition from devious competitive airline owners who threaten his business and his passengers',
         slider:'yes',
-        type:'bollywood'
+        type:'Bollywood'
     
     },
     {
@@ -76,7 +76,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/RjXg8Jx4r',
         slider:'no',
-        type:'bollywood'
+        type:'Bollywood'
     },
     {
         title: 'Kill',
@@ -87,7 +87,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/5hxJJJF2-',
         slider:'no',
-        type:'bollywood'
+        type:'Bollywood'
     },
     {
         title: 'Maharashi',
@@ -98,7 +98,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/VLKjiuaio',
         slider:'yes',
-        type:'south'
+        type:'South'
     },
     {
         title: 'Operation Java',
@@ -109,7 +109,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/CnR3iYOz8',
         slider:'no',
-        type:'south'
+        type:'South'
 
     },
     {
@@ -121,7 +121,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/jCnG4Bw6r',
         slider:'no',
-        type:'south'
+        type:'South'
 
     },
     {
@@ -133,7 +133,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/66tJvzS3-',
         slider:'no',
-        type:'south'
+        type:'South'
 
     },
     {
@@ -145,7 +145,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/E3UHARvXO',
         slider:'yes',
-        type:'south'
+        type:'South'
     },
     {
         title: 'Naa Saami Ranga',
@@ -156,7 +156,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://short.ink/0s3YGYW_h',
         slider:'no',
-        type:'south'
+        type:'South'
     },
     {
         title: 'Ramarao on Duty',
@@ -167,7 +167,7 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://res.cloudinary.com/djh2ro9tm/image/upload/v1722600424/Movie%20Background%20Poster/hq5d1khmvs3zxljtx7sx.jpg',
         slider:'no',
-        type:'south'
+        type:'South'
     },
     {
         title: 'Saindhav',
@@ -178,6 +178,6 @@ export const moviesdata = [
         movietrailer: '<iframe width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=4vF7F68bNi085BzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         movielink: 'https://res.cloudinary.com/djh2ro9tm/image/upload/v1722600424/Movie%20Background%20Poster/hq5d1khmvs3zxljtx7sx.jpg',
         slider:'no',
-        type:'south'
+        type:'South'
     },
 ]

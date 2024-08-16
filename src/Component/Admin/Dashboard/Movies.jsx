@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Sidebar from '../Sidebar/Sidebar';
 import { database } from '../../../Firebase';
-import { ref, push } from "firebase/database";
+import { ref, push, set, onValue, remove, serverTimestamp ,orderByChild, query} from "firebase/database";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,17 +16,41 @@ function Movies() {
   const [movieLink, setMovieLink] = useState('');
   const [movieTrailer, setMovieTrailer] = useState('');
   const [slider, setSlider] = useState('no');
-
   const [posterUrl, setPosterUrl] = useState('');
   const [backgroundUrl, setBackgroundUrl] = useState('');
   const [mobileBackgroundUrl, setMobileBackgroundUrl] = useState('');
-
+  const modalRef = useRef(null); 
   const preset_key = "CinemaCraze";
   const cloud_name = "djh2ro9tm";
 
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const now = new Date();
+  const timestamp = now.getTime(); // Epoch time in milliseconds
+  const date = now.toISOString(); // Human-readable date
+
+  useEffect(() => {
+    const movieRef = ref(database, 'Movies');
+    const q = query(movieRef, orderByChild('title'));
+
+    const unsubscribe = onValue(q, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const movieList = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key]
+        }));
+        setMovies(movieList); // Reverse to display the latest movie first
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe(); // Clean up the listener
+  }, []);
+
   const handleMultipleUploads = async (e) => {
     e.preventDefault();
-  
+
     const uploaders = [
       { file: poster, folder: 'posters', setUrl: setPosterUrl },
       { file: background, folder: 'backgrounds', setUrl: setBackgroundUrl },
@@ -37,16 +61,16 @@ function Movies() {
         formData.append('file', file);
         formData.append('upload_preset', preset_key);
         formData.append('folder', folder);
-  
+
         try {
           const response = await axios.post(
             `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
             formData
           );
-  
+
           const imageUrl = response.data.secure_url;
           setUrl(imageUrl);
-          return imageUrl; // Return the URL to use in the next step
+          return imageUrl;
         } catch (error) {
           console.error('Error uploading image:', error);
           toast.error('Image upload failed');
@@ -55,20 +79,18 @@ function Movies() {
       }
       return null;
     });
-  
-    // Wait for all image uploads to finish
+
     const urls = await Promise.all(uploaders);
-  
-    // Assign the image URLs to their respective variables
+
     const [posterImageUrl, backgroundImageUrl, mobileBackgroundImageUrl] = urls;
-  
-    // Ensure all URLs are properly set
+
     if (posterImageUrl) setPosterUrl(posterImageUrl);
     if (backgroundImageUrl) setBackgroundUrl(backgroundImageUrl);
     if (mobileBackgroundImageUrl) setMobileBackgroundUrl(mobileBackgroundImageUrl);
-  
-    // Now save the movie details with the image URLs to Firebase
+    const movieCount = movies ? Object.keys(movies).length : 0;
+    const newMovieId = `movie${movieCount + 1}`;
     const movieData = {
+      id:newMovieId,
       title,
       description,
       movieType,
@@ -78,24 +100,52 @@ function Movies() {
       posterUrl: posterImageUrl,
       backgroundUrl: backgroundImageUrl,
       mobileBackgroundUrl: mobileBackgroundImageUrl,
+      timestamp,
+      date
     };
-  
+
     try {
-      const movieRef = ref(database, 'Movies');
-      await push(movieRef, movieData);
+      const movieRef = ref(database, `Movies/${title}`);
+      await set(movieRef, movieData);
       toast.success("Movie details saved successfully!");
+      setTitle('');
+      setDescription('');
+      setMovieType('');
+      setMovieLink('');
+      setMovieTrailer('');
+      setSlider('no');
+      setPoster(null);
+      setBackground(null);
+      setMobileBackground(null);
+      setPosterUrl('');
+      setBackgroundUrl('');
+      setMobileBackgroundUrl('');
+      if (modalRef.current) {
+        modalRef.current.classList.add('hidden'); // Hides the modal
+      }
     } catch (error) {
       console.error('Error saving movie details:', error);
       toast.error('Failed to save movie details');
     }
   };
-  
 
   const handleFileChange = (e, setFile) => {
     const file = e.target.files[0];
     if (file) {
       setFile(file);
     }
+  };
+
+  const handleDelete = (title) => {
+    const movieRef = ref(database, `Movies/${title}`);
+    remove(movieRef)
+      .then(() => {
+        toast.success("Movie deleted successfully!");
+      })
+      .catch((error) => {
+        console.error("Error deleting movie:", error);
+        toast.error("Failed to delete movie");
+      });
   };
 
   return (
@@ -290,6 +340,31 @@ function Movies() {
           </div>
         </div>
       </div>
+      <section className='ml-[300px]'>
+        <ul>
+
+        </ul>
+        <div className='grid grid-cols-4 gap-5'>
+          {movies.map((movie, index) => (
+            <>
+              <div className='border-2 border-red-500 h-[250px] w-[200px] relative' style={{ background: `url(${movie.posterUrl})`, backgroundSize: 'cover' }}>
+                <div className='bg-white h-10 w-full absolute bottom-0'>
+                  <h1 className='text-black font-bold text-center'>{movie.title}</h1>
+                  <div className='float-right'>
+                    <span className='p-2'><i className="fa-solid fa-pen-to-square"></i></span>
+                    <span className='p-2'>
+                      <button className='' onClick={() => handleDelete(movie.title)}>
+                        <i className="fa-solid fa-trash"></i>
+                      </button>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

@@ -11,9 +11,9 @@ function Home() {
         {/* <Slider/> */}
         <MovieSlider/>
         {/* <Movies/> */}
-        <MovieDisplay type="bollywood"/>
-        <MovieDisplay type="south"/>
-        <MovieDisplay type="hollywood"/>
+        <MovieDisplay type="Bollywood"/>
+        <MovieDisplay type="South"/>
+        <MovieDisplay type="Hollywood"/>
         <Footer/>
     </div>
   )
