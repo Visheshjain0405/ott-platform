@@ -9,7 +9,7 @@ function Home() {
     <div>
         <Navbar/>
         {/* <Slider/> */}
-        {/* <MovieSlider/> */}
+        <MovieSlider/>
         {/* <Movies/> */}
         <MovieDisplay type="Bollywood"/>
         <MovieDisplay type="South"/>
