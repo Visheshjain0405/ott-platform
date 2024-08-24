@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { equalTo, onValue, orderByChild, query, ref } from 'firebase/database';
-import { database } from '../../Firebase';
+import { database, auth } from '../../Firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 function Movieplay() {
   const { name } = useParams();
   const [movie, setMovie] = useState(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const movieRef = ref(database, 'Movies');
     const q = query(movieRef, orderByChild('title'), equalTo(name));
@@ -23,15 +24,26 @@ function Movieplay() {
     return () => unsubscribe(); // Clean up the listener
   }, [name]);
 
+  useEffect(() => {
+    const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        // If not logged in, redirect to login page
+        navigate('/login');
+      }
+    });
+
+    return () => unsubscribeAuth();  // Clean up the listener on unmount
+  }, [navigate])
+
   if (!movie) {
     return <h1>No Movie Found</h1>;
   }
 
   return (
     <div>
-      <iframe 
-        className='h-[100vh] w-[100vw]' 
-        src={`${movie.movieLink}`} 
+      <iframe
+        className='h-[100vh] w-[100vw]'
+        src={`${movie.movieLink}`}
         title={movie.title}
         allowFullScreen
       ></iframe>
