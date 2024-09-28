@@ -37,7 +37,6 @@ const navigate=useNavigate();
 
                 // Filter movies by type
                 const filteredMovies = movieList.filter(movie => movie.movieType === type);
-
                 // Sort movies based on the numerical part of the id
                 const sortedMovies = filteredMovies.sort((a, b) => {
                     const idA = parseInt(a.id.replace('movie', ''), 10);

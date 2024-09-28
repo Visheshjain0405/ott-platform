@@ -30,7 +30,7 @@ function MovieType() {
                 }));
 
                 const filteredMovies = movieList.filter(movie => movie.movieType === movietype);
-
+                console.log(filterMovies)
                 // Sort movies based on the numerical part of the id
                 const sortedMovies = filteredMovies.sort((a, b) => {
                     const idA = parseInt(a.id.replace('movie', ''), 10);

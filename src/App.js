@@ -11,6 +11,7 @@ import Movieplay from './Component/Movie/Movieplay';
 import MovieType from './Component/Movie/MovieType';
 import Login from './Component/Pages/Login';
 import Signup from './Component/Pages/Signup';
+import AddMovie from './Component/Admin/Dashboard/AddMovie';
 
 function App() {
   return (
@@ -24,10 +25,11 @@ function App() {
       <Route path="/moviedisplay/:name" element={<MovieDetails />} />
       <Route path="/movieplay/:name" element={<Movieplay/>}/>
       <Route path='/movies/:type' element={<MovieType/>}/>
-      <Route path='/addmovie' element={<Movies/>}/>
+      <Route path='/adminmovie' element={<Movies/>}/>
       <Route path='/admin' element={<Dashboard/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
+      <Route path='/addmovie' element={<AddMovie/>}/>
     </Routes>
     </div>
   );

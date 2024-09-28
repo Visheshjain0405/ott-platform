@@ -2,9 +2,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Sidebar from '../Sidebar/Sidebar';
 import { database } from '../../../Firebase';
-import { ref, push, set, onValue, remove, serverTimestamp ,orderByChild, query} from "firebase/database";
+import { ref, push, set, onValue, remove, serverTimestamp, orderByChild, query } from "firebase/database";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 function Movies() {
   const [poster, setPoster] = useState(null);
@@ -19,7 +20,7 @@ function Movies() {
   const [posterUrl, setPosterUrl] = useState('');
   const [backgroundUrl, setBackgroundUrl] = useState('');
   const [mobileBackgroundUrl, setMobileBackgroundUrl] = useState('');
-  const modalRef = useRef(null); 
+  const modalRef = useRef(null);
   const preset_key = "CinemaCraze";
   const cloud_name = "djh2ro9tm";
 
@@ -90,7 +91,7 @@ function Movies() {
     const movieCount = movies ? Object.keys(movies).length : 0;
     const newMovieId = `movie${movieCount + 1}`;
     const movieData = {
-      id:newMovieId,
+      id: newMovieId,
       title,
       description,
       movieType,
@@ -152,14 +153,14 @@ function Movies() {
     <div>
       <Sidebar />
       <ToastContainer />
-      <button
-        data-modal-target="authentication-modal"
-        data-modal-toggle="authentication-modal"
-        className="block text-white bg-blue-700 ml-[500px] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button"
-      >
-        Toggle modal
-      </button>
+      <Link to="/addmovie">
+        <button
+          type="button"
+          className="block text-white bg-blue-700 ml-[500px] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Add Movie
+        </button>
+      </Link>
       <div
         id="authentication-modal"
         tabIndex={-1}

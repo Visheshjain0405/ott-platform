@@ -14,6 +14,7 @@ function Home() {
         <MovieDisplay type="Bollywood"/>
         <MovieDisplay type="South"/>
         <MovieDisplay type="Hollywood"/>
+        <MovieDisplay type="Web-Series"/>
         <Footer/>
     </div>
   )
