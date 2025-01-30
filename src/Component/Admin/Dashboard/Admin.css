@@ -1,0 +1,18 @@
+/* Hide the admin panel and show the message for smaller screens */
+@media (max-width: 768px) {
+    .admin-panel {
+      display: none;
+    }
+  
+    .mobile-message {
+      display: block;
+    }
+  }
+  
+  /* Hide the mobile message on larger screens */
+  @media (min-width: 769px) {
+    .mobile-message {
+      display: none;
+    }
+  }
+  
