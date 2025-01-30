@@ -15,13 +15,20 @@
     "axios": "^1.7.3",
     "firebase": "^10.12.5",
     "flowbite": "^2.4.1",
+<<<<<<< HEAD
     "js-cookie": "^3.0.5",
+=======
+>>>>>>> 123e60324666a2680efffd5e3bfca46eef491b98
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-feather": "^2.0.10",
     "react-icons": "^5.2.1",
     "react-multi-carousel": "^2.8.5",
+<<<<<<< HEAD
     "react-router-dom": "^6.28.2",
+=======
+    "react-router-dom": "^6.25.1",
+>>>>>>> 123e60324666a2680efffd5e3bfca46eef491b98
     "react-scripts": "5.0.1",
     "react-simple-image-slider": "^2.4.1",
     "react-slideshow-image": "^4.3.1",

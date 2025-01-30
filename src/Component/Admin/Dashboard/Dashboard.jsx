@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React,{useState,useEffect} from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 
@@ -33,6 +34,15 @@ function Dashboard() {
           <Sidebar />
         </div>
       )}
+=======
+import React from 'react'
+import Sidebar from '../Sidebar/Sidebar'
+
+function Dashboard() {
+  return (
+    <div>
+        <Sidebar/>
+>>>>>>> 123e60324666a2680efffd5e3bfca46eef491b98
     </div>
   )
 }

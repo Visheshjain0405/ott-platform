@@ -151,7 +151,12 @@ function Movies() {
 
   return (
     <div>
+<<<<<<< HEAD
       {/* <Sidebar /> */}
+=======
+      <Sidebar />
+      <ToastContainer />
+>>>>>>> 123e60324666a2680efffd5e3bfca46eef491b98
       <Link to="/addmovie">
         <button
           type="button"
@@ -344,6 +349,7 @@ function Movies() {
         <ul>
 
         </ul>
+<<<<<<< HEAD
       
         <div className="overflow-x-auto">
           <div className="min-w-screen md:min-w-0">
@@ -367,6 +373,29 @@ function Movies() {
       </section>
       <ToastContainer />
 
+=======
+        <div className='grid grid-cols-4 gap-5'>
+          {movies.map((movie, index) => (
+            <>
+              <div className='border-2 border-red-500 h-[250px] w-[200px] relative' style={{ background: `url(${movie.posterUrl})`, backgroundSize: 'cover' }}>
+                <div className='bg-white h-10 w-full absolute bottom-0'>
+                  <h1 className='text-black font-bold text-center'>{movie.title}</h1>
+                  <div className='float-right'>
+                    <span className='p-2'><i className="fa-solid fa-pen-to-square"></i></span>
+                    <span className='p-2'>
+                      <button className='' onClick={() => handleDelete(movie.title)}>
+                        <i className="fa-solid fa-trash"></i>
+                      </button>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+            </>
+          ))}
+        </div>
+      </section>
+>>>>>>> 123e60324666a2680efffd5e3bfca46eef491b98
     </div>
   );
 }
